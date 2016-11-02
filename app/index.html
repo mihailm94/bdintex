@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bdintex">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="authors" content="Mihi & Damaren">
+
+<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="styles/stylesheet.css">
+<!-- endbuild -->
+
+	<title>Bdintex</title>
+</head>
+
+<body id="top">
+<!-- HEADER ============================================================================================================= -->
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+	                Menu <i class="fa fa-bars"></i>
+	            </button>
+	            <a class="navbar-brand page-scroll" href="#top">
+	                <i class="fa fa-play-circle"></i> <span class="light">Bdintex</span>
+	            </a>
+	        </div>
+
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	            <ul class="nav navbar-nav">
+	                <li>
+	                    <a href="#about">About Us</a>
+	                </li>
+	                <li>
+	                	<a href="#gallery">Gallery</a>
+	                </li>
+	                <li>
+	                    <a href="#contact">Contact</a>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+	<header class="jumbotron" id="jumbotronHeader">
+		<div class="container">
+			<video id="video" preload muted autoplay loop poster="video/poster.jpg">
+			<!--
+				<source src="video/video.mp4" type="video/mp4">
+				<source src="video/video.webm" type="video/webm">
+			-->
+			</video>
+		</div>
+		<div class="container">
+			<div class="row row-header">
+				<div class="col-xs-12">
+					<h1>BDINTEX</h1>
+					<p> The website for Bdintex </p>
+				</div>
+			</div>
+		</div>
+	</header>
+<!--/HEADER ============================================================================================================= -->
+<!-- ABOUT ============================================================================================================= -->
+	<div class="container" id="about">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>About Bdintex</h3>
+			</div>
+			<div class="col-xs-12">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas lectus molestie, pellentesque erat a, dignissim justo. Maecenas sed ipsum et elit consequat imperdiet sit amet tristique elit. Fusce suscipit eros at libero pellentesque luctus. Nam neque massa, consequat id porttitor in, dictum sed erat. Proin ut arcu ante. Donec vulputate dolor mi, a pharetra ex accumsan sed. Etiam vel pulvinar justo. Aliquam mauris dui, aliquet ornare libero non, condimentum sollicitudin lacus. Nulla eu arcu id est semper scelerisque. Sed molestie augue vel imperdiet sagittis.</p>
+			</div>
+		</div>
+	</div>
+<!--/ABOUT ============================================================================================================= -->
+<!-- GALLERY ============================================================================================================= -->
+	<div class="container">
+		<div class="row" id="gallery">
+			<div class="col-xs-12 text-center">
+				<h3>Gallery</h3>
+			</div>
+		</div>
+		<div class="row" ng-controller="GalleryController">
+			<div class="tab-content">
+				<ul class="media-list text-center">
+					<li class="media col-xs-4" ng-repeat="shirt in shirts">
+						<div class="media-middle">
+							<a href="#"> <!-- ANCHOR LAUNCHES CAROUSEL -->
+								<img
+									class="media-object img-thumbnail"
+									ng-src="{{shirt.image}}"
+									alt="shirt"
+								>
+							</a>
+						</div>
+					</li> 
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- CAROUSEL SHOULD COME HERE --> 
+	
+<!--/GALLERY ============================================================================================================= -->
+<!-- CONTACT ============================================================================================================= -->
+	<div class="container">
+		<div class="row" id="contact">
+			<div class="col-xs-12 text-center">
+				<button id="contactButton" type="button" class="btn btn-lg" data-toggle="modal" data-target="#messageModal">Send us a Message</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="modal fade" id="messageModal" role="dialog" aria-labelledby="messageModal" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+							<h3 class="modal-title text-center">
+								Send us a message
+							</h3>
+						</div>
+						<div class="modal-body">
+							<form class="form" id="form">
+								<div class="form-group">
+									<label for="nameInput">Name</label>
+									<input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+								</div>
+								<div class="form-group">
+									<label for="Email">Email address</label>
+									<input type="emailInput" class="form-control" id="emailInput" placeholder="Your Email">
+								</div>
+								<div class="form-group">
+									<label for="messageInput">Your Message</label>
+									<textarea class="form-control" id="messageInput" rows="9"></textarea>
+								</div>
+								<div class="text-center">
+									<button id="sendButton" type="button" class="btn" data-dismiss="modal">
+									Send</button>
+									<button id="cancelButton" type="button" class="btn" data-dismiss="modal">
+									Cancel</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--/CONTACT ============================================================================================================= -->
+<!-- MAP ============================================================================================================= -->
+	<div id="mapContainer">
+		<div id="map"></div>
+	</div>
+<!--/MAP ============================================================================================================= -->
+<!-- FOOTER ============================================================================================================= -->
+	<footer class="row-footer jumbotron" id="jumbotronFooter">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h6>&copy; 2016 Bdintex</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	
+<!--/FOOTER ============================================================================================================= -->
+
+<!-- build:js styles/main.js-->
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC59I-WxDyvGEMX4pZqB45BjI28gPSJ5ZE&callback=initMap">
+    </script>
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="../bower_components/scrollmagic/scrollmagic/greensock-js/src/uncompressed/TweenMax.js"></script>
+	<script type="text/javascript" src="../bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="../bower_components/scrollmagic/scrollmagic/greensock-js/src/uncompressed/jquery.gsap.js"></script>
+	<script type="text/javascript" src="../bower_components/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js">></script>
+	<script type="text/javascript" src="../bower_components/scrollmagic/scrollmagic/greensock-js/src/uncompressed/plugins/ScrollToPlugin.js"></script>
+	
+
+	<script type="text/javascript" src="scripts/controllers.js"></script>
+	<script type="text/javascript" src="scripts/services.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

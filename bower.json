@@ -1,0 +1,35 @@
+{
+  "name": "Bdintex Website",
+  "version": "1.0.0",
+  "description": "Website for Bdintex",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Bdintex",
+    "Company",
+    "Factory",
+    "Sewing"
+  ],
+  "authors": [
+    "Mihi & Damaren"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "jquery": "^3.1.1",
+    "scrollmagic": "^2.0.5",
+    "angular-route": "^1.5.8"
+  }
+}
